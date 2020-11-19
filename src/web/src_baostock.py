@@ -1,8 +1,10 @@
 
+# import all modules
 import baostock as BS
 import pandas as PD
 import time as TIME
 
+# declare global variable
 START_DATE = '2017-06-01'
 END_DATE   = TIME.strftime('%Y-%m-%d')
 
@@ -16,6 +18,9 @@ CODE_OK = '0'
 # time : 交易所行情时间，格式 YYYYMMDDHHMMSSsss
 #
 
+###############################################################################
+# Login baostock
+###############################################################################
 def login():
 	lg = BS.login()
 
