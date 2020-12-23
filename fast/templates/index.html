@@ -1,0 +1,59 @@
+
+<html>
+  <head>
+      <script src="/static/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+  
+  // function clickButton()
+  //   {
+  //   alert("Button 1 was clicked!")
+  //   }
+
+  function clickButton()
+  {
+    alert("Button 1  was clicked!")
+
+    // $.post("http://127.0.0.1:8000/bar", { name: "John", time: "2pm" }, function(data){
+    //     alert(data)
+    // } );
+    df = {"df": {"dt1":[0,23,90.09]}};
+          console.log(df);
+
+    // $.ajax({
+    //           type: "post",
+    //           url: "http://127.0.0.1:8000/jsoned",
+    //           async: true,
+    //           // headers:{"Content-Type":"application/json","accept":"application/json","name":"666"},
+    //           // dataType:"json",
+    //           data:JSON.stringify(df),  //http 请求 记住要把数据转换为json格式数据
+    //           success: function (res) {
+    //               console.log('成功检测');
+    //               console.log(res);
+    //               console.log(res["data"]["lst"]);
+    //               alert(res["data"]["lst"])
+    //           },
+    //           error:function () {
+    //               alert("返回数据失败")
+    //           }
+    //       });
+    $.post("/jsoned", JSON.stringify(df), function (res) {
+                  console.log('成功检测');
+                  console.log(res);
+                  console.log(res["data"]["lst"]);
+                  alert(res["data"]["lst"])
+              })
+
+    alert("Button 3 was clicked!")
+  }
+  
+  </script>
+  </head>
+  <body>
+  
+  <form>
+  <input type="button" id="button1" onclick="clickButton()"
+  value="Button 1" />
+  </form>
+  <H1>404 : {{ data }} </H1>
+  </body>
+  </html>
